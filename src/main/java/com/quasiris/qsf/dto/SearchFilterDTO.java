@@ -18,12 +18,21 @@ public class SearchFilterDTO {
 
     private String id;
 
+    private String name;
+
     private List<Object> values;
 
     private Object minValue;
 
     private Object maxValue;
 
+    private boolean lowerIncluded;
+
+    private boolean lowerExcluded;
+
+    private boolean upperIncluded;
+
+    private boolean upperExcluded;
 
     /**
      * Getter for property 'filterType'.
@@ -77,6 +86,14 @@ public class SearchFilterDTO {
      */
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -149,5 +166,37 @@ public class SearchFilterDTO {
      */
     public void setFilterDataType(FilterDataType filterDataType) {
         this.filterDataType = filterDataType;
+    }
+
+    public boolean isLowerIncluded() {
+        return lowerIncluded;
+    }
+
+    public void setLowerIncluded(boolean lowerIncluded) {
+        this.lowerIncluded = lowerIncluded;
+    }
+
+    public boolean isLowerExcluded() {
+        return lowerExcluded;
+    }
+
+    public void setLowerExcluded(boolean lowerExcluded) {
+        this.lowerExcluded = lowerExcluded;
+    }
+
+    public boolean isUpperIncluded() {
+        return upperIncluded;
+    }
+
+    public void setUpperIncluded(boolean upperIncluded) {
+        this.upperIncluded = upperIncluded;
+    }
+
+    public boolean isUpperExcluded() {
+        return upperExcluded;
+    }
+
+    public void setUpperExcluded(boolean upperExcluded) {
+        this.upperExcluded = upperExcluded;
     }
 }
