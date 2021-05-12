@@ -26,11 +26,7 @@ public class SearchFilterDTO {
 
     private Object maxValue;
 
-    private boolean lowerIncluded;
-
     private boolean lowerExcluded;
-
-    private boolean upperIncluded;
 
     private boolean upperExcluded;
 
@@ -169,11 +165,7 @@ public class SearchFilterDTO {
     }
 
     public boolean isLowerIncluded() {
-        return lowerIncluded;
-    }
-
-    public void setLowerIncluded(boolean lowerIncluded) {
-        this.lowerIncluded = lowerIncluded;
+        return !lowerExcluded;
     }
 
     public boolean isLowerExcluded() {
@@ -185,11 +177,7 @@ public class SearchFilterDTO {
     }
 
     public boolean isUpperIncluded() {
-        return upperIncluded;
-    }
-
-    public void setUpperIncluded(boolean upperIncluded) {
-        this.upperIncluded = upperIncluded;
+        return !upperExcluded;
     }
 
     public boolean isUpperExcluded() {
