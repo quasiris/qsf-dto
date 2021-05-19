@@ -26,9 +26,9 @@ public class SearchFilterDTO {
 
     private Object maxValue;
 
-    private boolean lowerExcluded;
+    private Boolean lowerExcluded;
 
-    private boolean upperExcluded;
+    private Boolean upperExcluded;
 
     /**
      * Getter for property 'filterType'.
@@ -164,27 +164,27 @@ public class SearchFilterDTO {
         this.filterDataType = filterDataType;
     }
 
-    public boolean isLowerIncluded() {
-        return !lowerExcluded;
+    public Boolean getLowerIncluded() {
+        return lowerExcluded != null ? !lowerExcluded : null;
     }
 
-    public boolean isLowerExcluded() {
+    public Boolean getLowerExcluded() {
         return lowerExcluded;
     }
 
-    public void setLowerExcluded(boolean lowerExcluded) {
+    public void setLowerExcluded(Boolean lowerExcluded) {
         this.lowerExcluded = lowerExcluded;
     }
 
-    public boolean isUpperIncluded() {
-        return !upperExcluded;
+    public Boolean getUpperIncluded() {
+        return upperExcluded != null ? !upperExcluded : null;
     }
 
-    public boolean isUpperExcluded() {
+    public Boolean getUpperExcluded() {
         return upperExcluded;
     }
 
-    public void setUpperExcluded(boolean upperExcluded) {
+    public void setUpperExcluded(Boolean upperExcluded) {
         this.upperExcluded = upperExcluded;
     }
 }
