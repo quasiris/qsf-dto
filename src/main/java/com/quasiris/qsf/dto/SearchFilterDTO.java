@@ -3,6 +3,8 @@ package com.quasiris.qsf.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -199,6 +201,19 @@ public class SearchFilterDTO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(filterType, filterDataType, filterOperator, id, name, values, minValue, maxValue, lowerExcluded, upperExcluded);
+        Object[] objValues = null;
+        if(values != null) {
+            List<String> textValues = new ArrayList<>();
+            for (Object value : values) {
+                String textValue = "_null_";
+                if(value != null) {
+                    textValue = value.toString();
+                }
+                textValues.add(textValue);
+            }
+            objValues = textValues.toArray();
+            Arrays.sort(objValues);
+        }
+        return Objects.hash(filterType, filterDataType, filterOperator, id, name, Arrays.hashCode(objValues), minValue, maxValue, lowerExcluded, upperExcluded);
     }
 }
