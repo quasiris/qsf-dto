@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -186,5 +187,18 @@ public class SearchFilterDTO {
 
     public void setUpperExcluded(Boolean upperExcluded) {
         this.upperExcluded = upperExcluded;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SearchFilterDTO that = (SearchFilterDTO) o;
+        return filterType == that.filterType && filterDataType == that.filterDataType && filterOperator == that.filterOperator && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(values, that.values) && Objects.equals(minValue, that.minValue) && Objects.equals(maxValue, that.maxValue) && Objects.equals(lowerExcluded, that.lowerExcluded) && Objects.equals(upperExcluded, that.upperExcluded);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(filterType, filterDataType, filterOperator, id, name, values, minValue, maxValue, lowerExcluded, upperExcluded);
     }
 }
