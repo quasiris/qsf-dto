@@ -4,7 +4,7 @@
 
     <groupId>com.quasiris.qsf</groupId>
     <artifactId>qsf-dto</artifactId>
-    <version>0.1.4-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>qsf-dto</name>
     <url>https://www.quasiris.de/de/quasiris-search-cloud/</url>
