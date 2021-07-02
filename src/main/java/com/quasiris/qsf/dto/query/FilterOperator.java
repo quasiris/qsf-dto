@@ -1,4 +1,4 @@
-package com.quasiris.qsf.dto;
+package com.quasiris.qsf.dto.query;
 
 /**
  * Created by tbl on 19.7.20.

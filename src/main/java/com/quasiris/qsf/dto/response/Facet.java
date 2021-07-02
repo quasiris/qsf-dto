@@ -1,7 +1,6 @@
-package com.quasiris.qsf.response;
+package com.quasiris.qsf.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-
 import java.util.ArrayList;
 import java.util.List;
 

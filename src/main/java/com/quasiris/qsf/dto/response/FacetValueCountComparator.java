@@ -1,4 +1,4 @@
-package com.quasiris.qsf.response;
+package com.quasiris.qsf.dto.response;
 
 import java.util.Comparator;
 

@@ -1,4 +1,4 @@
-package com.quasiris.qsf.dto;
+package com.quasiris.qsf.dto.query;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 

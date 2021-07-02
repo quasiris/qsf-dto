@@ -1,4 +1,4 @@
-package com.quasiris.qsf.response;
+package com.quasiris.qsf.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -110,33 +110,5 @@ public class MonitoringResponse {
      */
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    /**
-     * Create a new monitoring response from the search result and the status.
-     *
-     * @param searchResult the search result.
-     * @param status the status.
-     * @return MonitoringResponse
-     */
-    public static MonitoringResponse create(SearchResult searchResult, String status) {
-        MonitoringResponse monitoringResponse = new MonitoringResponse();
-        monitoringResponse.setStatus(status);
-
-        monitoringResponse.setCurrentTime(new Date());
-        monitoringResponse.setStatusCode(searchResult.getStatusCode());
-        monitoringResponse.setTime(searchResult.getTime());
-
-        SimpleSearchResponse monitoringResult = new SimpleSearchResponse();
-
-        if(searchResult.getDocuments() == null) {
-            return monitoringResponse;
-        }
-        for(Document document : searchResult.getDocuments()) {
-            monitoringResult.add(document.getDocument());
-        }
-
-        monitoringResponse.setResult(monitoringResult);
-        return monitoringResponse;
     }
 }

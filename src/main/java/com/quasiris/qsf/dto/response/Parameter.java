@@ -1,4 +1,4 @@
-package com.quasiris.qsf.response;
+package com.quasiris.qsf.dto.response;
 
 /**
  * Created by mki on 19.11.17.
