@@ -24,6 +24,8 @@ public class SearchQueryDTO {
 
     private Boolean tracking;
 
+    private List<String> trackingTags;
+
     private List<SearchFilterDTO> searchFilters;
 
 
@@ -169,5 +171,23 @@ public class SearchQueryDTO {
      */
     public void setSearchFilters(List<SearchFilterDTO> searchFilters) {
         this.searchFilters = searchFilters;
+    }
+
+    /**
+     * Getter for property 'trackingTags'.
+     *
+     * @return Value for property 'trackingTags'.
+     */
+    public List<String> getTrackingTags() {
+        return trackingTags;
+    }
+
+    /**
+     * Setter for property 'trackingTags'.
+     *
+     * @param trackingTags Value to set for property 'trackingTags'.
+     */
+    public void setTrackingTags(List<String> trackingTags) {
+        this.trackingTags = trackingTags;
     }
 }
