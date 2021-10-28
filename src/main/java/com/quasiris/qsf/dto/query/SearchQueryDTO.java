@@ -4,13 +4,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
+import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchQueryDTO {
 
     private String q;
-
 
     private Integer page;
 
@@ -27,6 +27,11 @@ public class SearchQueryDTO {
     private List<String> trackingTags;
 
     private List<SearchFilterDTO> searchFilters;
+
+    private ResultDTO result;
+
+    private Map<String, Object> parameters;
+
 
 
     /**
@@ -189,5 +194,42 @@ public class SearchQueryDTO {
      */
     public void setTrackingTags(List<String> trackingTags) {
         this.trackingTags = trackingTags;
+    }
+
+
+    /**
+     * Getter for property 'result'.
+     *
+     * @return Value for property 'result'.
+     */
+    public ResultDTO getResult() {
+        return result;
+    }
+
+    /**
+     * Setter for property 'result'.
+     *
+     * @param result Value to set for property 'result'.
+     */
+    public void setResult(ResultDTO result) {
+        this.result = result;
+    }
+
+    /**
+     * Getter for property 'parameters'.
+     *
+     * @return Value for property 'parameters'.
+     */
+    public Map<String, Object> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * Setter for property 'parameters'.
+     *
+     * @param parameters Value to set for property 'parameters'.
+     */
+    public void setParameters(Map<String, Object> parameters) {
+        this.parameters = parameters;
     }
 }
