@@ -13,7 +13,6 @@ public class ResultDTO {
     private Map<String, DocumentDTO> documents;
 
     private List<FacetDTO> facets;
-    private List<SliderDTO> sliders;
 
     /**
      * Getter for property 'documents'.
@@ -51,22 +50,5 @@ public class ResultDTO {
         this.facets = facets;
     }
 
-    /**
-     * Getter for property 'sliders'.
-     *
-     * @return Value for property 'sliders'.
-     */
-    public List<SliderDTO> getSliders() {
-        return sliders;
-    }
-
-    /**
-     * Setter for property 'sliders'.
-     *
-     * @param sliders Value to set for property 'sliders'.
-     */
-    public void setSliders(List<SliderDTO> sliders) {
-        this.sliders = sliders;
-    }
 
 }
