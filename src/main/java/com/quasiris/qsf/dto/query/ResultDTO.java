@@ -3,52 +3,49 @@ package com.quasiris.qsf.dto.query;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.util.List;
 import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResultDTO {
 
-    private Map<String, DocumentDTO> documents;
+    private DocumentsDTO document;
 
-    private List<FacetDTO> facets;
+    private FacetDTO facet;
 
     /**
-     * Getter for property 'documents'.
+     * Getter for property 'document'.
      *
-     * @return Value for property 'documents'.
+     * @return Value for property 'document'.
      */
-    public Map<String, DocumentDTO> getDocuments() {
-        return documents;
+    public DocumentsDTO getDocument() {
+        return document;
     }
 
     /**
-     * Setter for property 'documents'.
+     * Setter for property 'document'.
      *
-     * @param documents Value to set for property 'documents'.
+     * @param document Value to set for property 'document'.
      */
-    public void setDocuments(Map<String, DocumentDTO> documents) {
-        this.documents = documents;
+    public void setDocument(DocumentsDTO document) {
+        this.document = document;
     }
 
     /**
-     * Getter for property 'facets'.
+     * Getter for property 'facet'.
      *
-     * @return Value for property 'facets'.
+     * @return Value for property 'facet'.
      */
-    public List<FacetDTO> getFacets() {
-        return facets;
+    public FacetDTO getFacet() {
+        return facet;
     }
 
     /**
-     * Setter for property 'facets'.
+     * Setter for property 'facet'.
      *
-     * @param facets Value to set for property 'facets'.
+     * @param facet Value to set for property 'facet'.
      */
-    public void setFacets(List<FacetDTO> facets) {
-        this.facets = facets;
+    public void setFacet(FacetDTO facet) {
+        this.facet = facet;
     }
-
-
 }
