@@ -3,8 +3,6 @@ package com.quasiris.qsf.dto.query;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.util.Map;
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ResultDTO {
@@ -12,6 +10,7 @@ public class ResultDTO {
     private DocumentsDTO document;
 
     private FacetDTO facet;
+    private PagingDTO paging;
 
     /**
      * Getter for property 'document'.
@@ -47,5 +46,23 @@ public class ResultDTO {
      */
     public void setFacet(FacetDTO facet) {
         this.facet = facet;
+    }
+
+    /**
+     * Getter for property 'paging'.
+     *
+     * @return Value for property 'paging'.
+     */
+    public PagingDTO getPaging() {
+        return paging;
+    }
+
+    /**
+     * Setter for property 'paging'.
+     *
+     * @param paging Value to set for property 'paging'.
+     */
+    public void setPaging(PagingDTO paging) {
+        this.paging = paging;
     }
 }
