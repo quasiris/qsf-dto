@@ -14,6 +14,8 @@ public class Facet {
 
     private String id;
 
+    private String type;
+
     private String filterName;
 
     private Long count;
@@ -22,7 +24,14 @@ public class Facet {
 
     private Boolean selected;
 
-    private List<FacetValue> values = new ArrayList<>();
+    private List<FacetValue> values;
+
+    private Double minValue;
+    private Double maxValue;
+    private Double minRange;
+    private Double maxRange;
+
+
 
 
     public String getName() {
@@ -89,6 +98,96 @@ public class Facet {
      */
     public void setSelected(Boolean selected) {
         this.selected = selected;
+    }
+
+    /**
+     * Getter for property 'type'.
+     *
+     * @return Value for property 'type'.
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * Setter for property 'type'.
+     *
+     * @param type Value to set for property 'type'.
+     */
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * Getter for property 'minValue'.
+     *
+     * @return Value for property 'minValue'.
+     */
+    public Double getMinValue() {
+        return minValue;
+    }
+
+    /**
+     * Setter for property 'minValue'.
+     *
+     * @param minValue Value to set for property 'minValue'.
+     */
+    public void setMinValue(Double minValue) {
+        this.minValue = minValue;
+    }
+
+    /**
+     * Getter for property 'maxValue'.
+     *
+     * @return Value for property 'maxValue'.
+     */
+    public Double getMaxValue() {
+        return maxValue;
+    }
+
+    /**
+     * Setter for property 'maxValue'.
+     *
+     * @param maxValue Value to set for property 'maxValue'.
+     */
+    public void setMaxValue(Double maxValue) {
+        this.maxValue = maxValue;
+    }
+
+    /**
+     * Getter for property 'minRange'.
+     *
+     * @return Value for property 'minRange'.
+     */
+    public Double getMinRange() {
+        return minRange;
+    }
+
+    /**
+     * Setter for property 'minRange'.
+     *
+     * @param minRange Value to set for property 'minRange'.
+     */
+    public void setMinRange(Double minRange) {
+        this.minRange = minRange;
+    }
+
+    /**
+     * Getter for property 'maxRange'.
+     *
+     * @return Value for property 'maxRange'.
+     */
+    public Double getMaxRange() {
+        return maxRange;
+    }
+
+    /**
+     * Setter for property 'maxRange'.
+     *
+     * @param maxRange Value to set for property 'maxRange'.
+     */
+    public void setMaxRange(Double maxRange) {
+        this.maxRange = maxRange;
     }
 
     public FacetValue getFacetValueByValue(String value) {
