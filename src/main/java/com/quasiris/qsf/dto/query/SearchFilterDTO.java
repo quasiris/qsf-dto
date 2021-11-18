@@ -10,7 +10,7 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SearchFilterDTO {
+public class SearchFilterDTO extends BaseSearchFilterDTO {
 
 
     private FilterType filterType;
@@ -215,5 +215,10 @@ public class SearchFilterDTO {
             Arrays.sort(objValues);
         }
         return Objects.hash(filterType, filterDataType, filterOperator, id, name, Arrays.hashCode(objValues), minValue, maxValue, lowerExcluded, upperExcluded);
+    }
+
+    @Override
+    public String getOpType() {
+        return "filter";
     }
 }
