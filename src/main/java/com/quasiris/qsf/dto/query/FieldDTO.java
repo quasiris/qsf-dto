@@ -8,9 +8,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class FieldDTO {
 
     private Integer length;
+    private String source;
     private String dataType;
     private String format;
     private String highlighting;
+    private String highlightingTag;
+    private Boolean removeHtmlTags;
 
     /**
      * Getter for property 'length'.
@@ -82,5 +85,59 @@ public class FieldDTO {
      */
     public void setHighlighting(String highlighting) {
         this.highlighting = highlighting;
+    }
+
+    /**
+     * Getter for property 'source'.
+     *
+     * @return Value for property 'source'.
+     */
+    public String getSource() {
+        return source;
+    }
+
+    /**
+     * Setter for property 'source'.
+     *
+     * @param source Value to set for property 'source'.
+     */
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    /**
+     * Getter for property 'highlightingTag'.
+     *
+     * @return Value for property 'highlightingTag'.
+     */
+    public String getHighlightingTag() {
+        return highlightingTag;
+    }
+
+    /**
+     * Setter for property 'highlightingTag'.
+     *
+     * @param highlightingTag Value to set for property 'highlightingTag'.
+     */
+    public void setHighlightingTag(String highlightingTag) {
+        this.highlightingTag = highlightingTag;
+    }
+
+    /**
+     * Getter for property 'removeHtmlTags'.
+     *
+     * @return Value for property 'removeHtmlTags'.
+     */
+    public Boolean getRemoveHtmlTags() {
+        return removeHtmlTags;
+    }
+
+    /**
+     * Setter for property 'removeHtmlTags'.
+     *
+     * @param removeHtmlTags Value to set for property 'removeHtmlTags'.
+     */
+    public void setRemoveHtmlTags(Boolean removeHtmlTags) {
+        this.removeHtmlTags = removeHtmlTags;
     }
 }
