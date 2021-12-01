@@ -214,7 +214,24 @@ public class SearchFilterDTO extends BaseSearchFilterDTO {
             objValues = textValues.toArray();
             Arrays.sort(objValues);
         }
-        return Objects.hash(filterType, filterDataType, filterOperator, id, name, Arrays.hashCode(objValues), minValue, maxValue, lowerExcluded, upperExcluded);
+
+        StringBuilder builder = new StringBuilder();
+        builder.append(filterType);
+        builder.append(filterDataType);
+        builder.append(filterOperator);
+        builder.append(id);
+        builder.append(name);
+        builder.append(minValue);
+        builder.append(maxValue);
+        builder.append(lowerExcluded);
+        builder.append(upperExcluded);
+        if(objValues != null) {
+            for (Object objValue : objValues) {
+                builder.append(objValue);
+            }
+        }
+
+        return builder.toString().hashCode();
     }
 
     @Override
