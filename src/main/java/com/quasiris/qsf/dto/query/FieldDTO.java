@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class FieldDTO {
 
     private Integer length;
+    private String lengthPunktuation;
     private String source;
     private String dataType;
     private String format;
@@ -31,6 +32,24 @@ public class FieldDTO {
      */
     public void setLength(Integer length) {
         this.length = length;
+    }
+
+    /**
+     * Getter for property 'lengthPunktuation'.
+     *
+     * @return Value for property 'lengthPunktuation'.
+     */
+    public String getLengthPunktuation() {
+        return lengthPunktuation;
+    }
+
+    /**
+     * Setter for property 'lengthPunktuation'.
+     *
+     * @param lengthPunktuation Value to set for property 'lengthPunktuation'.
+     */
+    public void setLengthPunktuation(String lengthPunktuation) {
+        this.lengthPunktuation = lengthPunktuation;
     }
 
     /**
