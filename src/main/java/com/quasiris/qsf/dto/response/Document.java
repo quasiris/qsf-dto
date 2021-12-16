@@ -12,6 +12,8 @@ public class Document {
 
     private String id;
 
+    private Long position;
+
     private Map<String, Object> document = new HashMap<>();
 
     public Document() {
@@ -168,5 +170,23 @@ public class Document {
             return;
         }
         setValue(name, value);
+    }
+
+    /**
+     * Getter for property 'position'.
+     *
+     * @return Value for property 'position'.
+     */
+    public Long getPosition() {
+        return position;
+    }
+
+    /**
+     * Setter for property 'position'.
+     *
+     * @param position Value to set for property 'position'.
+     */
+    public void setPosition(Long position) {
+        this.position = position;
     }
 }

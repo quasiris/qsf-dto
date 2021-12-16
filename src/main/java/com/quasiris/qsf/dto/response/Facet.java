@@ -31,6 +31,7 @@ public class Facet {
     private Double minRange;
     private Double maxRange;
 
+    private String unit;
 
 
 
@@ -188,6 +189,24 @@ public class Facet {
      */
     public void setMaxRange(Double maxRange) {
         this.maxRange = maxRange;
+    }
+
+    /**
+     * Getter for property 'unit'.
+     *
+     * @return Value for property 'unit'.
+     */
+    public String getUnit() {
+        return unit;
+    }
+
+    /**
+     * Setter for property 'unit'.
+     *
+     * @param unit Value to set for property 'unit'.
+     */
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 
     public FacetValue getFacetValueByValue(String value) {
