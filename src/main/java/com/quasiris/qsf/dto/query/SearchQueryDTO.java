@@ -26,7 +26,7 @@ public class SearchQueryDTO {
 
     private List<String> trackingTags;
 
-    private List<SearchFilterDTO> searchFilters;
+    private List<BaseSearchFilterDTO> searchFilters;
 
     private ResultDTO result;
 
@@ -165,7 +165,7 @@ public class SearchQueryDTO {
      *
      * @return Value for property 'searchFilters'.
      */
-    public List<SearchFilterDTO> getSearchFilters() {
+    public List<BaseSearchFilterDTO> getSearchFilters() {
         return searchFilters;
     }
 
@@ -174,7 +174,7 @@ public class SearchQueryDTO {
      *
      * @param searchFilters Value to set for property 'searchFilters'.
      */
-    public void setSearchFilters(List<SearchFilterDTO> searchFilters) {
+    public void setSearchFilters(List<BaseSearchFilterDTO> searchFilters) {
         this.searchFilters = searchFilters;
     }
 
