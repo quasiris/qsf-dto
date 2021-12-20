@@ -8,32 +8,23 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BoolSearchFilterDTO extends BaseSearchFilterDTO {
-    private List<BaseSearchFilterDTO> and;
-    private List<BaseSearchFilterDTO> or;
-    private List<BaseSearchFilterDTO> not;
+    private List<BaseSearchFilterDTO> filters;
+    private FilterOperator operator;
 
-    public List<BaseSearchFilterDTO> getAnd() {
-        return and;
+    public List<BaseSearchFilterDTO> getFilters() {
+        return filters;
     }
 
-    public void setAnd(List<BaseSearchFilterDTO> and) {
-        this.and = and;
+    public void setFilters(List<BaseSearchFilterDTO> filters) {
+        this.filters = filters;
     }
 
-    public List<BaseSearchFilterDTO> getOr() {
-        return or;
+    public FilterOperator getOperator() {
+        return operator;
     }
 
-    public void setOr(List<BaseSearchFilterDTO> or) {
-        this.or = or;
-    }
-
-    public List<BaseSearchFilterDTO> getNot() {
-        return not;
-    }
-
-    public void setNot(List<BaseSearchFilterDTO> not) {
-        this.not = not;
+    public void setOperator(FilterOperator operator) {
+        this.operator = operator;
     }
 
     @Override
