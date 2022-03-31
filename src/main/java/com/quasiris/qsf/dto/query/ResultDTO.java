@@ -10,6 +10,7 @@ public class ResultDTO {
     private DocumentsDTO document;
 
     private FacetDTO facet;
+    private SpellcheckDTO spellcheck;
     private PagingDTO paging;
 
     /**
@@ -64,5 +65,13 @@ public class ResultDTO {
      */
     public void setPaging(PagingDTO paging) {
         this.paging = paging;
+    }
+
+    public SpellcheckDTO getSpellcheck() {
+        return spellcheck;
+    }
+
+    public void setSpellcheck(SpellcheckDTO spellcheck) {
+        this.spellcheck = spellcheck;
     }
 }
