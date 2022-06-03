@@ -1,11 +1,8 @@
 package com.quasiris.qsf.dto.query;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.quasiris.qsf.dto.common.BaseDTO;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class ResultDTO {
+public class ResultDTO extends BaseDTO {
 
     private DocumentsDTO document;
 

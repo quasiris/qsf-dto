@@ -1,12 +1,11 @@
 package com.quasiris.qsf.dto.response;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.quasiris.qsf.dto.common.BaseDTO;
 
 /**
  * Created by mki on 21.01.18.
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class Paging {
+public class Paging extends BaseDTO {
 
     private Page firstPage;
 

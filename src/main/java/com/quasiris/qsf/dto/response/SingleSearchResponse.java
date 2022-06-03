@@ -1,14 +1,13 @@
 package com.quasiris.qsf.dto.response;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.quasiris.qsf.dto.common.BaseDTO;
 
 import java.util.Date;
 
 /**
  * Created by mki on 03.12.17.
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class SingleSearchResponse {
+public class SingleSearchResponse extends BaseDTO {
 
 
     private Integer statusCode;

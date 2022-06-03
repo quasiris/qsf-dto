@@ -1,14 +1,13 @@
 package com.quasiris.qsf.dto.response;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.quasiris.qsf.dto.common.BaseDTO;
 
 import java.util.Map;
 
 /**
  * Created by mki on 19.11.17.
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class Request {
+public class Request extends BaseDTO {
 
     public Request() {
     }

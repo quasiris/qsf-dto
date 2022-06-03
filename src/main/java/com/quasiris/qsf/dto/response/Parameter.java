@@ -1,9 +1,11 @@
 package com.quasiris.qsf.dto.response;
 
+import com.quasiris.qsf.dto.common.BaseDTO;
+
 /**
  * Created by mki on 19.11.17.
  */
-public class Parameter {
+public class Parameter extends BaseDTO {
 
     private String name;
 

@@ -1,12 +1,11 @@
 package com.quasiris.qsf.dto.response;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.quasiris.qsf.dto.common.BaseDTO;
 
 /**
  * Created by mki on 12.11.17.
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class FacetValue {
+public class FacetValue extends BaseDTO {
 
     public FacetValue() {
     }

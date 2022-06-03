@@ -1,7 +1,7 @@
 package com.quasiris.qsf.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.quasiris.qsf.dto.common.BaseDTO;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -10,8 +10,7 @@ import java.util.Map;
 /**
  * Created by mki on 11.11.16.
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class SearchResponse {
+public class SearchResponse extends BaseDTO {
 
     private Integer statusCode = 200;
 

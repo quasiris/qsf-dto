@@ -1,9 +1,11 @@
 package com.quasiris.qsf.dto.response;
 
+import com.quasiris.qsf.dto.common.BaseDTO;
+
 /**
  * Created by mki on 11.11.16.
  */
-public class DidYouMeanResult {
+public class DidYouMeanResult extends BaseDTO {
 
     private String name;
 

@@ -1,12 +1,11 @@
 package com.quasiris.qsf.dto.response;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.quasiris.qsf.dto.common.BaseDTO;
 
 /**
  * Created by tbl on 4.7.19.
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class Slider {
+public class Slider extends BaseDTO {
 
     private String name;
 

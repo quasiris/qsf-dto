@@ -1,14 +1,11 @@
 package com.quasiris.qsf.dto.query;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.quasiris.qsf.dto.common.BaseDTO;
 
 import java.util.List;
 import java.util.Map;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class SearchQueryDTO {
+public class SearchQueryDTO extends BaseDTO {
 
     private String q;
 
