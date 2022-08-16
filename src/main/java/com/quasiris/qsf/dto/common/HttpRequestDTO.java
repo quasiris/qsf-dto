@@ -1,5 +1,8 @@
 package com.quasiris.qsf.dto.common;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 /**
  * Http request object
  */
@@ -8,7 +11,7 @@ public class HttpRequestDTO extends BaseDTO {
     private String url;
     private Object body;
     private MultiMap<String, Object> params = new MultiMap<>();
-    private MultiMap<String, String> headers = new MultiMap<>();
+    private Map<String, String> headers = new LinkedHashMap<>();
     private HttpRequestOptionsDTO options;
 
     public String getMethod() {
@@ -43,11 +46,11 @@ public class HttpRequestDTO extends BaseDTO {
         this.params = params;
     }
 
-    public MultiMap<String, String> getHeaders() {
+    public Map<String, String> getHeaders() {
         return headers;
     }
 
-    public void setHeaders(MultiMap<String, String> headers) {
+    public void Map(Map<String, String> headers) {
         this.headers = headers;
     }
 
