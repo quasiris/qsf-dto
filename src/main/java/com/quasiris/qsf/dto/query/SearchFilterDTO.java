@@ -1,9 +1,6 @@
 package com.quasiris.qsf.dto.query;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class SearchFilterDTO extends BaseSearchFilterDTO {
 
@@ -27,6 +24,10 @@ public class SearchFilterDTO extends BaseSearchFilterDTO {
     private Boolean lowerExcluded;
 
     private Boolean upperExcluded;
+
+    // loadMoreFacets
+    // modified - when the filter is modified by the user, automatic selected filters are ignored
+    private Set<String> ctrl;
 
     /**
      * Getter for property 'filterType'.
@@ -232,5 +233,13 @@ public class SearchFilterDTO extends BaseSearchFilterDTO {
     @Override
     public String getOpType() {
         return "filter";
+    }
+
+    public Set<String> getCtrl() {
+        return ctrl;
+    }
+
+    public void setCtrl(Set<String> ctrl) {
+        this.ctrl = ctrl;
     }
 }
