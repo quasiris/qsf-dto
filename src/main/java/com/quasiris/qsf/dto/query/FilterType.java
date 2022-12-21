@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum FilterType {
 
-    TERM("term"), RELATIVERANGE("relativerange"), RANGE("range"),SLIDER("slider"),TREE("tree");
+    TERM("term"), RELATIVERANGE("relativerange"), HUMANDDATE("humandate"), RANGE("range"),SLIDER("slider"),TREE("tree");
 
 
     private final String code;
@@ -31,6 +31,10 @@ public enum FilterType {
 
     public boolean isTerm() {
         return TERM == this;
+    }
+
+    public boolean isHumanDate() {
+        return HUMANDDATE == this;
     }
 
 }
