@@ -25,6 +25,8 @@ public class FacetValue extends BaseDTO {
 
     private Facet children;
 
+    private Integer position;
+
     public String getValue() {
         return value;
     }
@@ -83,6 +85,14 @@ public class FacetValue extends BaseDTO {
      */
     public void setSelected(Boolean selected) {
         this.selected = selected;
+    }
+
+    public Integer getPosition() {
+        return position;
+    }
+
+    public void setPosition(Integer position) {
+        this.position = position;
     }
 
     @Override
