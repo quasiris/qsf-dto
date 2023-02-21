@@ -46,6 +46,8 @@ public class SearchResult extends BaseDTO {
 
     private Paging paging;
 
+    private Sort sort;
+
     private Redirect redirect;
 
     private Map<String, Object> context;
@@ -276,6 +278,14 @@ public class SearchResult extends BaseDTO {
      */
     public void setRedirect(Redirect redirect) {
         this.redirect = redirect;
+    }
+
+    public Sort getSort() {
+        return sort;
+    }
+
+    public void setSort(Sort sort) {
+        this.sort = sort;
     }
 
     @Override
