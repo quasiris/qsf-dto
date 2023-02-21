@@ -10,6 +10,8 @@ public class SortEntry extends BaseDTO {
     private String id;
     private String displayText;
 
+    private Boolean selected;
+
     public String getId() {
         return id;
     }
@@ -24,5 +26,13 @@ public class SortEntry extends BaseDTO {
 
     public void setDisplayText(String displayText) {
         this.displayText = displayText;
+    }
+
+    public Boolean getSelected() {
+        return selected;
+    }
+
+    public void setSelected(Boolean selected) {
+        this.selected = selected;
     }
 }
