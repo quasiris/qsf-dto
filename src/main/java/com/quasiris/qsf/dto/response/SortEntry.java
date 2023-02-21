@@ -8,7 +8,7 @@ import com.quasiris.qsf.dto.common.BaseDTO;
 public class SortEntry extends BaseDTO {
 
     private String id;
-    private String displayText;
+    private String name;
 
     private Boolean selected;
 
@@ -20,12 +20,12 @@ public class SortEntry extends BaseDTO {
         this.id = id;
     }
 
-    public String getDisplayText() {
-        return displayText;
+    public String getName() {
+        return name;
     }
 
-    public void setDisplayText(String displayText) {
-        this.displayText = displayText;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Boolean getSelected() {
