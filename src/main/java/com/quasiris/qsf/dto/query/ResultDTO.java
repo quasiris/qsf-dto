@@ -7,6 +7,7 @@ public class ResultDTO extends BaseDTO {
     private DocumentsDTO document;
 
     private FacetDTO facet;
+    private VariantDTO variant;
     private SpellcheckDTO spellcheck;
     private PagingDTO paging;
 
@@ -70,5 +71,13 @@ public class ResultDTO extends BaseDTO {
 
     public void setSpellcheck(SpellcheckDTO spellcheck) {
         this.spellcheck = spellcheck;
+    }
+
+    public VariantDTO getVariant() {
+        return variant;
+    }
+
+    public void setVariant(VariantDTO variant) {
+        this.variant = variant;
     }
 }
