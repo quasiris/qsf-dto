@@ -2,6 +2,7 @@ package com.quasiris.qsf.dto.response;
 
 import com.quasiris.qsf.dto.common.BaseDTO;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by mki on 12.11.17.
@@ -30,6 +31,8 @@ public class Facet extends BaseDTO {
     private Double maxRange;
 
     private String unit;
+
+    private Map<String, Object> properties;
 
 
 
@@ -224,6 +227,13 @@ public class Facet extends BaseDTO {
         return facetValue.getCount();
     }
 
+    public Map<String, Object> getProperties() {
+        return properties;
+    }
+
+    public void setProperties(Map<String, Object> properties) {
+        this.properties = properties;
+    }
 
     @Override
     public String toString() {

@@ -2,6 +2,8 @@ package com.quasiris.qsf.dto.response;
 
 import com.quasiris.qsf.dto.common.BaseDTO;
 
+import java.util.Map;
+
 /**
  * Created by mki on 12.11.17.
  */
@@ -19,13 +21,15 @@ public class FacetValue extends BaseDTO {
 
     private Long count;
 
-    private String filter;
+    private Object filter;
 
     private Boolean selected;
 
     private Facet children;
 
     private Integer position;
+
+    private Map<String, Object> properties;
 
     public String getValue() {
         return value;
@@ -43,11 +47,11 @@ public class FacetValue extends BaseDTO {
         this.count = count;
     }
 
-    public String getFilter() {
+    public Object getFilter() {
         return filter;
     }
 
-    public void setFilter(String filter) {
+    public void setFilter(Object filter) {
         this.filter = filter;
     }
 
@@ -93,6 +97,14 @@ public class FacetValue extends BaseDTO {
 
     public void setPosition(Integer position) {
         this.position = position;
+    }
+
+    public Map<String, Object> getProperties() {
+        return properties;
+    }
+
+    public void setProperties(Map<String, Object> properties) {
+        this.properties = properties;
     }
 
     @Override
