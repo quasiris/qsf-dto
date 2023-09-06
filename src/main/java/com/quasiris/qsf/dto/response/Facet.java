@@ -23,6 +23,8 @@ public class Facet extends BaseDTO {
 
     private Boolean selected;
 
+    private Map<String, Object> properties;
+
     private List<FacetValue> values;
 
     private Double minValue;
@@ -32,7 +34,7 @@ public class Facet extends BaseDTO {
 
     private String unit;
 
-    private Map<String, Object> properties;
+
 
 
 
