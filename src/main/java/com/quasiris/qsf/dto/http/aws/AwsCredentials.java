@@ -3,6 +3,7 @@ package com.quasiris.qsf.dto.http.aws;
 public class AwsCredentials {
     private AwsCredentialsValue value;
     private AwsCredentialsLocation location;
+    private Boolean prioritizeValue = Boolean.FALSE;
 
     public AwsCredentialsValue getValue() {
         return value;
@@ -18,5 +19,13 @@ public class AwsCredentials {
 
     public void setLocation(AwsCredentialsLocation location) {
         this.location = location;
+    }
+
+    public Boolean getPrioritizeValue() {
+        return prioritizeValue;
+    }
+
+    public void setPrioritizeValue(Boolean prioritizeValue) {
+        this.prioritizeValue = prioritizeValue;
     }
 }
