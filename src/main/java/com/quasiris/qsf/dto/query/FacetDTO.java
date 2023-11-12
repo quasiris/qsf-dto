@@ -10,6 +10,8 @@ public class FacetDTO extends BaseDTO {
 
     private List<FacetsDTO> facets;
 
+    private FacetCategoryDTO facetCategory;
+
     /**
      * Getter for property 'enabled'.
      *
@@ -44,5 +46,13 @@ public class FacetDTO extends BaseDTO {
      */
     public void setFacets(List<FacetsDTO> facets) {
         this.facets = facets;
+    }
+
+    public FacetCategoryDTO getFacetCategory() {
+        return facetCategory;
+    }
+
+    public void setFacetCategory(FacetCategoryDTO facetCategory) {
+        this.facetCategory = facetCategory;
     }
 }
