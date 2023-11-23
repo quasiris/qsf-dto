@@ -21,6 +21,8 @@ public class Hit extends BaseDTO {
     private LinkedHashMap<String, InnerHitResult> inner_hits;
     private InnerHitNested _nested;
 
+    private Map<String, List<Object>> fields;
+
     private Map<String, List<String>> highlight;
 
 
@@ -115,6 +117,13 @@ public class Hit extends BaseDTO {
         this._nested = _nested;
     }
 
+    public Map<String, List<Object>> getFields() {
+        return fields;
+    }
+
+    public void setFields(Map<String, List<Object>> fields) {
+        this.fields = fields;
+    }
 
     @Override
     public String toString() {
