@@ -5,6 +5,7 @@ import com.quasiris.qsf.dto.common.BaseDTO;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,6 +16,8 @@ public class SearchResponse extends BaseDTO {
     private Integer statusCode = 200;
 
     private Map<String, SearchResult> result = new HashMap<>();
+
+    private Map<String, List<Widget>> widget;
 
     private long time;
 
@@ -101,5 +104,13 @@ public class SearchResponse extends BaseDTO {
      */
     public void setRequestId(String requestId) {
         this.requestId = requestId;
+    }
+
+    public Map<String, List<Widget>> getWidget() {
+        return widget;
+    }
+
+    public void setWidget(Map<String, List<Widget>> widget) {
+        this.widget = widget;
     }
 }
