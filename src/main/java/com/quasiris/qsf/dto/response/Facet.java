@@ -34,6 +34,8 @@ public class Facet extends BaseDTO {
 
     private String unit;
 
+    private List<Facet> children;
+
 
 
 
@@ -235,6 +237,15 @@ public class Facet extends BaseDTO {
 
     public void setProperties(Map<String, Object> properties) {
         this.properties = properties;
+    }
+
+
+    public List<Facet> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<Facet> children) {
+        this.children = children;
     }
 
     @Override
