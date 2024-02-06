@@ -17,7 +17,7 @@ public class SearchResponse extends BaseDTO {
 
     private Map<String, SearchResult> result = new HashMap<>();
 
-    private Map<String, List<Widget>> widget;
+    private Map<String, List<Widget>> widgets;
 
     private long time;
 
@@ -104,13 +104,5 @@ public class SearchResponse extends BaseDTO {
      */
     public void setRequestId(String requestId) {
         this.requestId = requestId;
-    }
-
-    public Map<String, List<Widget>> getWidget() {
-        return widget;
-    }
-
-    public void setWidget(Map<String, List<Widget>> widget) {
-        this.widget = widget;
     }
 }
