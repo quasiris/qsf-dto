@@ -105,4 +105,12 @@ public class SearchResponse extends BaseDTO {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
+
+    public Map<String, List<Widget>> getWidgets() {
+        return widgets;
+    }
+
+    public void setWidgets(Map<String, List<Widget>> widgets) {
+        this.widgets = widgets;
+    }
 }
