@@ -14,6 +14,8 @@ public class SearchQueryDTO extends BaseDTO {
     private Integer rows;
 
     private String requestId;
+    private String userId;
+    private String sessionId;
 
     private String requestOrigin;
 
@@ -101,6 +103,22 @@ public class SearchQueryDTO extends BaseDTO {
      */
     public void setRequestId(String requestId) {
         this.requestId = requestId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getSessionId() {
+        return sessionId;
+    }
+
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
     }
 
     /**
