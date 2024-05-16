@@ -8,6 +8,7 @@ import com.quasiris.qsf.dto.common.BaseDTO;
  */
 public class ElasticResult extends BaseDTO {
 
+    private String _scroll_id;
     private long took;
 
     private Hits hits;
@@ -47,6 +48,14 @@ public class ElasticResult extends BaseDTO {
      */
     public void setAggregations(Aggregation aggregations) {
         this.aggregations = aggregations;
+    }
+
+    public String get_scroll_id() {
+        return _scroll_id;
+    }
+
+    public void set_scroll_id(String _scroll_id) {
+        this._scroll_id = _scroll_id;
     }
 
     @Override
