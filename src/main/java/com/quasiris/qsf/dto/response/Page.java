@@ -12,6 +12,7 @@ public class Page extends BaseDTO {
     private Integer number;
 
     private String parameter;
+    private String token;
 
     public Boolean getCurrentPage() {
         return currentPage;
@@ -37,12 +38,21 @@ public class Page extends BaseDTO {
         this.parameter = parameter;
     }
 
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     @Override
     public String toString() {
         return "Page{" +
                 "currentPage=" + currentPage +
                 ", number=" + number +
                 ", parameter='" + parameter + '\'' +
+                ", token='" + token + '\'' +
                 '}';
     }
 }

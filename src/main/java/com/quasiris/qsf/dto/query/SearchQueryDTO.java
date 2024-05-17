@@ -10,6 +10,7 @@ public class SearchQueryDTO extends BaseDTO {
     private String q;
 
     private Integer page;
+    private String nextPageToken;
 
     private Integer rows;
 
@@ -246,5 +247,13 @@ public class SearchQueryDTO extends BaseDTO {
      */
     public void setParameters(Map<String, Object> parameters) {
         this.parameters = parameters;
+    }
+
+    public String getNextPageToken() {
+        return nextPageToken;
+    }
+
+    public void setNextPageToken(String nextPageToken) {
+        this.nextPageToken = nextPageToken;
     }
 }
