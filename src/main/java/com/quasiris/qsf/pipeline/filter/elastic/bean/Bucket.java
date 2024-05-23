@@ -2,6 +2,8 @@ package com.quasiris.qsf.pipeline.filter.elastic.bean;
 
 import com.quasiris.qsf.dto.common.BaseDTO;
 
+import java.util.Map;
+
 /**
  * Created by mki on 04.02.18.
  */
@@ -14,6 +16,8 @@ public class Bucket extends BaseDTO {
     private Aggregation subFacet;
 
     private VariantCount variant_count;
+
+    private Map<String, Object> customData;
 
     public String getKey() {
         return key;
@@ -55,6 +59,14 @@ public class Bucket extends BaseDTO {
      */
     public void setVariant_count(VariantCount variant_count) {
         this.variant_count = variant_count;
+    }
+
+    public Map<String, Object> getCustomData() {
+        return customData;
+    }
+
+    public void setCustomData(Map<String, Object> customData) {
+        this.customData = customData;
     }
 
     @Override

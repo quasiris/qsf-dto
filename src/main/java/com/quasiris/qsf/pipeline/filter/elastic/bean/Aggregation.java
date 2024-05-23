@@ -1,5 +1,6 @@
 package com.quasiris.qsf.pipeline.filter.elastic.bean;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.quasiris.qsf.dto.common.BaseDTO;
 
 import java.util.List;
@@ -15,7 +16,10 @@ public class Aggregation extends BaseDTO {
     private Integer sum_other_doc_count;
 
     private Long value;
-    List<Bucket> buckets;
+
+
+    @JsonDeserialize(using = BucketDeserializer.class)
+    private List<Bucket> buckets;
 
     private Integer count;
     private Double min;

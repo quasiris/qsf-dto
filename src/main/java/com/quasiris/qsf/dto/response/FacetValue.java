@@ -30,6 +30,7 @@ public class FacetValue extends BaseDTO {
     private Integer position;
 
     private Map<String, Object> properties;
+    private Map<String, Object> customData;
 
     public String getValue() {
         return value;
@@ -105,6 +106,14 @@ public class FacetValue extends BaseDTO {
 
     public void setProperties(Map<String, Object> properties) {
         this.properties = properties;
+    }
+
+    public Map<String, Object> getCustomData() {
+        return customData;
+    }
+
+    public void setCustomData(Map<String, Object> customData) {
+        this.customData = customData;
     }
 
     @Override
