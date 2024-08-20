@@ -12,12 +12,12 @@ public class FacetValue extends BaseDTO {
     public FacetValue() {
     }
 
-    public FacetValue(String value, Long count) {
+    public FacetValue(Object value, Long count) {
         this.value = value;
         this.count = count;
     }
 
-    private String value;
+    private Object value;
 
     private Long count;
 
@@ -32,11 +32,11 @@ public class FacetValue extends BaseDTO {
     private Map<String, Object> properties;
     private Map<String, Object> customData;
 
-    public String getValue() {
+    public Object getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Object value) {
         this.value = value;
     }
 

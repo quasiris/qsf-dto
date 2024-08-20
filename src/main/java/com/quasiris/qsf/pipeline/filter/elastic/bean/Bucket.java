@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class Bucket extends BaseDTO {
 
-    private String key;
+    private Object key;
     private Long doc_count;
 
 
@@ -19,11 +19,11 @@ public class Bucket extends BaseDTO {
 
     private Map<String, Object> customData;
 
-    public String getKey() {
+    public Object getKey() {
         return key;
     }
 
-    public void setKey(String key) {
+    public void setKey(Object key) {
         this.key = key;
     }
 
