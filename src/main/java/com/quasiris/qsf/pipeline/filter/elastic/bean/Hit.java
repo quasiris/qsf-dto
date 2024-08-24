@@ -18,6 +18,7 @@ public class Hit extends BaseDTO {
     private Double _score;
     private ObjectNode _source;
     private ObjectNode _explanation;
+    private List<String> matched_queries;
     private LinkedHashMap<String, InnerHitResult> inner_hits;
     private InnerHitNested _nested;
 
@@ -123,6 +124,14 @@ public class Hit extends BaseDTO {
 
     public void setFields(Map<String, List<Object>> fields) {
         this.fields = fields;
+    }
+
+    public List<String> getMatched_queries() {
+        return matched_queries;
+    }
+
+    public void setMatched_queries(List<String> matched_queries) {
+        this.matched_queries = matched_queries;
     }
 
     @Override
