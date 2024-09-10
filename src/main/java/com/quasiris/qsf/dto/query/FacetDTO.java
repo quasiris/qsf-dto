@@ -2,13 +2,13 @@ package com.quasiris.qsf.dto.query;
 
 import com.quasiris.qsf.dto.common.BaseDTO;
 
-import java.util.List;
+import java.util.Map;
 
 public class FacetDTO extends BaseDTO {
 
     private Boolean enabled;
 
-    private List<FacetsDTO> facets;
+    private Map<String, FacetsDTO> facets;
 
     private FacetCategoryDTO facetCategory;
 
@@ -30,21 +30,11 @@ public class FacetDTO extends BaseDTO {
         this.enabled = enabled;
     }
 
-    /**
-     * Getter for property 'facets'.
-     *
-     * @return Value for property 'facets'.
-     */
-    public List<FacetsDTO> getFacets() {
+    public Map<String, FacetsDTO> getFacets() {
         return facets;
     }
 
-    /**
-     * Setter for property 'facets'.
-     *
-     * @param facets Value to set for property 'facets'.
-     */
-    public void setFacets(List<FacetsDTO> facets) {
+    public void setFacets(Map<String, FacetsDTO> facets) {
         this.facets = facets;
     }
 
