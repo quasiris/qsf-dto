@@ -136,6 +136,14 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>quasiris-snapshots</id>
+            <name>Quasiris Snapshot Repository</name>
+            <url>${nexus.base.url}/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <licenses>
         <license>
             <name>MIT License</name>
