@@ -32,6 +32,8 @@ public class SearchQueryDTO extends BaseDTO {
 
     private Map<String, Object> parameters;
 
+    private String locale;
+
 
 
     /**
@@ -255,5 +257,13 @@ public class SearchQueryDTO extends BaseDTO {
 
     public void setNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
+    }
+
+    public String getLocale() {
+        return locale;
+    }
+
+    public void setLocale(String locale) {
+        this.locale = locale;
     }
 }
