@@ -28,6 +28,13 @@ public class SearchQueryDTO extends BaseDTO {
 
     private List<BaseSearchFilterDTO> searchFilters;
 
+    /**
+     * OpenAPI-friendly filter map where key is the filter id.
+     * This is an alternative to searchFilters for easier OpenAPI documentation.
+     * Use {@link #getAllSearchFilters()} to get combined filters from both fields.
+     */
+    private Map<String, ExplicitSearchFilterDTO> filters;
+
     private ResultDTO result;
 
     private Map<String, Object> parameters;
@@ -194,6 +201,34 @@ public class SearchQueryDTO extends BaseDTO {
      */
     public void setSearchFilters(List<BaseSearchFilterDTO> searchFilters) {
         this.searchFilters = searchFilters;
+    }
+
+    /**
+     * Getter for property 'filters'.
+     *
+     * @return Value for property 'filters'.
+     */
+    public Map<String, ExplicitSearchFilterDTO> getFilters() {
+        return filters;
+    }
+
+    /**
+     * Setter for property 'filters'.
+     *
+     * @param filters Value to set for property 'filters'.
+     */
+    public void setFilters(Map<String, ExplicitSearchFilterDTO> filters) {
+        this.filters = filters;
+    }
+
+    /**
+     * Returns all search filters from both searchFilters and filters (explicit) combined.
+     * Use this method to get a unified list of all filters regardless of input format.
+     *
+     * @return combined list of all filters
+     */
+    public List<BaseSearchFilterDTO> getAllSearchFilters() {
+        return ExplicitSearchFilterMapper.merge(searchFilters, filters);
     }
 
     /**
