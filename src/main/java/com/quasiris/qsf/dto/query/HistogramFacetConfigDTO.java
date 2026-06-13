@@ -14,6 +14,8 @@ public class HistogramFacetConfigDTO {
 
     private List<IntervalDTO> intervals;
 
+    private List<MetricDTO> metrics;
+
     public List<IntervalDTO> getIntervals() {
         return intervals;
     }
@@ -44,5 +46,13 @@ public class HistogramFacetConfigDTO {
 
     public void setQuery(JsonNode query) {
         this.query = query;
+    }
+
+    public List<MetricDTO> getMetrics() {
+        return metrics;
+    }
+
+    public void setMetrics(List<MetricDTO> metrics) {
+        this.metrics = metrics;
     }
 }

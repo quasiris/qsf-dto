@@ -48,8 +48,13 @@ public class BucketDeserializer extends StdDeserializer<List<Bucket>> {
                     Map.Entry<String, JsonNode> field = fields.next();
                     if(field.getValue().isObject() && field.getValue().get("doc_count") != null) {
                         addCustomData(bucket, field.getKey(), field.getValue().get("doc_count").asLong());
-                    } else  if(field.getValue().isObject() && field.getValue().get("value") != null) {
+                    } else if(field.getValue().isObject() && field.getValue().get("value") != null) {
                         addCustomData(bucket, field.getKey(), field.getValue().get("value").asDouble());
+                    } else if(field.getValue().isObject() && field.getValue().get("values") != null && field.getValue().get("values").isObject()) {
+                        Map<String, Object> valuesMap = new LinkedHashMap<>();
+                        field.getValue().get("values").fields().forEachRemaining(e ->
+                                valuesMap.put(e.getKey(), e.getValue().isNull() ? null : e.getValue().asDouble()));
+                        addCustomData(bucket, field.getKey(), valuesMap);
                     }
                 }
                 buckets.add(bucket);
