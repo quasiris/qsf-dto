@@ -2,6 +2,7 @@ package com.quasiris.qsf.pipeline.filter.elastic.bean;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -55,6 +56,8 @@ public class BucketDeserializer extends StdDeserializer<List<Bucket>> {
                         field.getValue().get("values").fields().forEachRemaining(e ->
                                 valuesMap.put(e.getKey(), e.getValue().isNull() ? null : e.getValue().asDouble()));
                         addCustomData(bucket, field.getKey(), valuesMap);
+                    } else if(isTopHits(field.getValue())) {
+                        addCustomData(bucket, field.getKey(), extractTopHitsSources(field.getValue()));
                     }
                 }
                 buckets.add(bucket);
@@ -62,6 +65,29 @@ public class BucketDeserializer extends StdDeserializer<List<Bucket>> {
             }
         }
         return buckets;
+    }
+
+    private boolean isTopHits(JsonNode node) {
+        return node.isObject()
+                && node.get("hits") != null
+                && node.get("hits").isObject()
+                && node.get("hits").get("hits") != null
+                && node.get("hits").get("hits").isArray();
+    }
+
+    /**
+     * Keep the _source of each hit of a top_hits sub aggregation, so a result transformer
+     * can access document values per bucket (e.g. the original cased value of a lowercase terms bucket).
+     */
+    private List<Map<String, Object>> extractTopHitsSources(JsonNode topHitsNode) {
+        List<Map<String, Object>> sources = new ArrayList<>();
+        for (JsonNode hit : topHitsNode.get("hits").get("hits")) {
+            JsonNode source = hit.get("_source");
+            if (source != null && source.isObject()) {
+                sources.add(mapper.convertValue(source, new TypeReference<Map<String, Object>>() {}));
+            }
+        }
+        return sources;
     }
 
     void addCustomData(Bucket bucket, String key, Object value) {
