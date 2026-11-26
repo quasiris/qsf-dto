@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum FilterType {
 
-    TERM("term"), RELATIVERANGE("relativerange"), HUMANDDATE("humandate"), RANGE("range"),SLIDER("slider"),TREE("tree"),DATE_RANGE_IN_PERIOD("dateRangeInPeriod");
+    TERM("term"), RELATIVERANGE("relativerange"), HUMANDDATE("humandate"), RANGE("range"),SLIDER("slider"),TREE("tree"),DATE_RANGE_IN_PERIOD("dateRangeInPeriod"),GEO("geo");
 
 
     private final String code;
@@ -39,6 +39,10 @@ public enum FilterType {
 
     public boolean isDateRangeInPeriod() {
         return DATE_RANGE_IN_PERIOD == this;
+    }
+
+    public boolean isGeo() {
+        return GEO == this;
     }
 
 }

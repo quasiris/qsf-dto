@@ -25,6 +25,17 @@ public class SearchFilterDTO extends BaseSearchFilterDTO {
 
     private Boolean upperExcluded;
 
+    /**
+     * Reference point of a geo filter, e.g. {"lat": 50.972, "lon": 11.0117}.
+     * Typed as Object, so that invalid input (e.g. an array) can be rejected with a clear error.
+     */
+    private Object point;
+
+    /**
+     * Radius of a geo filter in meters. Without a radius the geo filter is only a reference point.
+     */
+    private Object radius;
+
     // loadMoreFacets
     // modified - when the filter is modified by the user, automatic selected filters are ignored
     private Set<String> ctrl;
@@ -192,7 +203,7 @@ public class SearchFilterDTO extends BaseSearchFilterDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SearchFilterDTO that = (SearchFilterDTO) o;
-        return filterType == that.filterType && filterDataType == that.filterDataType && filterOperator == that.filterOperator && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(values, that.values) && Objects.equals(minValue, that.minValue) && Objects.equals(maxValue, that.maxValue) && Objects.equals(lowerExcluded, that.lowerExcluded) && Objects.equals(upperExcluded, that.upperExcluded);
+        return filterType == that.filterType && filterDataType == that.filterDataType && filterOperator == that.filterOperator && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(values, that.values) && Objects.equals(minValue, that.minValue) && Objects.equals(maxValue, that.maxValue) && Objects.equals(lowerExcluded, that.lowerExcluded) && Objects.equals(upperExcluded, that.upperExcluded) && Objects.equals(point, that.point) && Objects.equals(radius, that.radius);
     }
 
     @Override
@@ -221,6 +232,11 @@ public class SearchFilterDTO extends BaseSearchFilterDTO {
         builder.append(maxValue);
         builder.append(lowerExcluded);
         builder.append(upperExcluded);
+        if(point != null || radius != null) {
+            // only geo filters contribute, so the hash of all other filters stays unchanged
+            builder.append(point);
+            builder.append(radius);
+        }
         if(objValues != null) {
             for (Object objValue : objValues) {
                 builder.append(objValue);
@@ -233,6 +249,22 @@ public class SearchFilterDTO extends BaseSearchFilterDTO {
     @Override
     public String getOpType() {
         return "filter";
+    }
+
+    public Object getPoint() {
+        return point;
+    }
+
+    public void setPoint(Object point) {
+        this.point = point;
+    }
+
+    public Object getRadius() {
+        return radius;
+    }
+
+    public void setRadius(Object radius) {
+        this.radius = radius;
     }
 
     public Set<String> getCtrl() {
